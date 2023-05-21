@@ -11,7 +11,13 @@ const Home = (props) => {
     }, []);
     return (
         <div>
-            {user?.name}
+            <h4 className="text-4xl font-bold">
+            Welcome {user?.name}
+            </h4>
+
+            <div className="flex container items-center">
+            
+            </div>
         </div>
     );
 };
