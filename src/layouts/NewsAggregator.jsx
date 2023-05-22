@@ -130,25 +130,25 @@ const NewsAggregator = () => {
     
          <div className="container mx-auto p-4">       
    
-            <div className="flex flex-col mb-4 sm:flex-wrap sm:flex-row">
+            <div className="flex flex-col sm:mb-4 mb-0 sm:flex-wrap sm:flex-row">
             {/* Search input */}
                 
-                <div className='w-full my-1 sm:w-1/2 sm:mr- md:w-1/2 rounded'>
+                <div className='w-full sm:w-1/2 md:w-1/2 w-full flex'>                    
                     <input
                         type="text"
-                        className="w-full my-1 sm:w-1/2 sm:mr- md:w-1/3 p-2 rounded border border-gray-300"
+                        className="mb-4 sm:mb-0 sm:w-2/3 md:w-1/3 p-2 rounded border border-gray-300 w-full"
                         placeholder="Search articles by keyword"
                         value={searchKeyword}
                         onChange={handleSearchInputChange}
                     />
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 my-1 ml-2" onClick={fetchNews}>Search</button>
+                    <button className="mb-4 sm:mb-0 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 ml-2 mr-0" onClick={fetchNews}>Search</button>
                 </div>
-                <div className='w-full my-1 sm:w-1/2 sm:mr- md:w-1/2 rounded'>
-                <div className="flex flex-col mb-4 sm:flex-wrap sm:flex-row">            
-                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
+                <div className='w-full sm:w-1/2 sm:mr- md:w-1/2 flex flex-col sm:flex-wrap sm:flex-row'>
+                                
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full sm:pr-3'>
                             {/* Source filter */}
                             <select
-                            className="w-full h-full rounded border border-gray-300 my-2 pl-1"
+                            className="w-full h-full rounded border border-gray-300 mb-4 sm:mb-0 pl-1 p-2"
                             name="source"
                             value={filterOptions.source}
                             onChange={handleFilterChange}>            
@@ -157,10 +157,10 @@ const NewsAggregator = () => {
                                 <option value="guardian">The Guardian</option>
                             </select>
                         </div>
-                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full sm:pr-3'>
                             {/* Category filter */}
                             <select
-                            className="w-full h-full rounded border border-gray-30 my-2 pl-1"
+                            className="w-full h-full rounded border border-gray-30 pl-1 mb-4 sm:mb-0 p-2"
                             name="category"
                             value={filterOptions.category}
                             onChange={handleFilterChange}>
@@ -171,10 +171,10 @@ const NewsAggregator = () => {
                                 <option value="business">Business</option>
                             </select>
                         </div>            
-                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>                            
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full sm:pr-3'>                            
                             {/* Date filter */}
                             <select
-                                className="w-full h-full rounded border border-gray-30 my-2 pl-1"
+                                className="w-full h-full rounded border border-gray-30 mb-4 sm:mb-0 pl-1  p-2"
                                 name="date"
                                 value={filterOptions.date}
                                 onChange={handleFilterChange}>
@@ -184,7 +184,7 @@ const NewsAggregator = () => {
                                 <option value="this-month">This Month</option>                
                             </select>
                         </div>           
-                    </div>
+                    
                 </div>
             </div>
     
