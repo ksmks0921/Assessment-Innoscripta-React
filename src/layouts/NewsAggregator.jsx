@@ -132,78 +132,66 @@ const NewsAggregator = () => {
    
             <div className="flex flex-col mb-4 sm:flex-wrap sm:flex-row">
             {/* Search input */}
-            <input
-                type="text"
-                className="w-full my-1 sm:w-1/2 sm:mr- md:w-1/3 p-2 rounded border border-gray-300"
-                placeholder="Search articles by keyword"
-                value={searchKeyword}
-                onChange={handleSearchInputChange}
-            />
+                
+                <div className='w-full my-1 sm:w-1/2 sm:mr- md:w-1/2 rounded'>
+                    <input
+                        type="text"
+                        className="w-full my-1 sm:w-1/2 sm:mr- md:w-1/3 p-2 rounded border border-gray-300"
+                        placeholder="Search articles by keyword"
+                        value={searchKeyword}
+                        onChange={handleSearchInputChange}
+                    />
+                    <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 my-1 ml-2" onClick={fetchNews}>Search</button>
+                </div>
+                <div className='w-full my-1 sm:w-1/2 sm:mr- md:w-1/2 rounded'>
+                <div className="flex flex-col mb-4 sm:flex-wrap sm:flex-row">            
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
+                            {/* Source filter */}
+                            <select
+                            className="w-full h-full rounded border border-gray-300 my-2 pl-1"
+                            name="source"
+                            value={filterOptions.source}
+                            onChange={handleFilterChange}>            
+                                <option value="news-api">News</option>
+                                <option value="nytimes">The New York Times</option>            
+                                <option value="guardian">The Guardian</option>
+                            </select>
+                        </div>
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
+                            {/* Category filter */}
+                            <select
+                            className="w-full h-full rounded border border-gray-30 my-2 pl-1"
+                            name="category"
+                            value={filterOptions.category}
+                            onChange={handleFilterChange}>
+                                <option value="">All Categories</option>                
+                                <option value="sports">Sports</option>
+                                <option value="health">Health</option>
+                                <option value="science">Science</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>            
+                        <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>                            
+                            {/* Date filter */}
+                            <select
+                                className="w-full h-full rounded border border-gray-30 my-2 pl-1"
+                                name="date"
+                                value={filterOptions.date}
+                                onChange={handleFilterChange}>
+                                <option value="">All Dates</option>
+                                <option value="today">Today</option>
+                                <option value="this-week">This Week</option>
+                                <option value="this-month">This Month</option>                
+                            </select>
+                        </div>           
+                    </div>
+                </div>
             </div>
     
             {/* Fetch news button */}
-            <button
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-            onClick={fetchNews}
-            >
-            Search
-            </button>
-            <div className="flex flex-wrap mb-4">
-            {/* Source filter */}
-            <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
-                <select
-                className="w-full h-full rounded border border-gray-300"
-                name="source"
-                value={filterOptions.source}
-                onChange={handleFilterChange}
-                >            
-                    <option value="news-api">News</option>
-                    <option value="nytimes">The New York Times</option>            
-                    <option value="guardian">The Guardian</option>
-                {/* Add more options as needed */}
-                </select>
-            </div>
-            <div className=' sm:w-1/2 md:w-1/3 p-0 w-full pr-3'>
-                <select
-                className="w-full h-full rounded border border-gray-300 mr-10"
-                name="category"
-                value={filterOptions.category}
-                onChange={handleFilterChange}
-                >
-                    <option value="">All Categories</option>                
-                    <option value="sports">Sports</option>
-                    <option value="health">Health</option>
-                    <option value="science">Science</option>
-                    <option value="business">Business</option>
-                    
-                    
-                {/* Add more options as needed */}
-                </select>
-            </div>
             
             
-             {/* Category filter */}
-            
-            {/* Date filter */}
-            <select
-                className="w-full sm:w-1/2 md:w-1/3 p-2 rounded border border-gray-300"
-                name="date"
-                value={filterOptions.date}
-                onChange={handleFilterChange}
-            >
-                <option value="">All Dates</option>
-                <option value="today">Today</option>
-                <option value="this-week">This Week</option>
-                <option value="this-month">This Month</option>
-            {/* Add more options as needed */}
-            </select>
-
-            
-
-            
-        </div>
-            {/* Display news articles */}
-            {/* ... */}
+            {/* Display news articles */}         
             {displayContent()}
        </div>
     
