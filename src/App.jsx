@@ -6,6 +6,8 @@ import Register from './pages/Register';
 import AuthLayout from './layouts/AuthLayout';
 import GuestLayout from './layouts/GuestLayout';
 
+import NewAuthLayout from './layouts/NewAuthLayout';
+
 const App = (props) => {
 
   return (
@@ -13,7 +15,7 @@ const App = (props) => {
         
        
             <Routes>
-                <Route element={<AuthLayout />}>
+                <Route element={<NewAuthLayout />}>
                     <Route path='/' element={<Home />} />
                 </Route>
                 <Route element={<GuestLayout />}>
