@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../api/axios';
-import { FormControl, FormHelperText, Grid, IconButton, InputBase, InputLabel, MenuItem, Paper, Select } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, FormControl, FormHelperText, Grid, IconButton, InputBase, InputLabel, MenuItem, Paper, Select, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 const NewNewsAggregator = () => {
 
@@ -55,14 +56,14 @@ const NewNewsAggregator = () => {
                 spacing={2}
                 xs={12}
                 // sx={{marginTop: "20px", marginLeft: "0px"}}
-                sx={{margin: "20px auto"}}
+                sx={{ margin: "20px auto" }}
             >
                 <Grid
                     container
                     item
                     alignItems='center'
                     justifyContent='center'
-                    sx={{paddingRight: "16px"}}
+                    sx={{ paddingRight: "16px" }}
                 >
                     <Paper
                         component="form"
@@ -89,7 +90,7 @@ const NewNewsAggregator = () => {
                     alignItems='center'
                     justifyContent='center'
                     xs={12}
-                    sx={{paddingRight: "16px", justifyContent: { xs: 'left', sm: 'center' }}}
+                    sx={{ paddingRight: "16px", justifyContent: { xs: 'left', sm: 'center' } }}
                 >
 
                     {/* Date Filter */}
@@ -165,8 +166,8 @@ const NewNewsAggregator = () => {
                 container
                 justifyContent="center"
                 alignItems="center"
+                spacing={4}
             >
-                Example Content
                 {news.map((article, index) => (
                     <div key={index} className="bg-white shadow-md p-4">
                         <h2 className="text-xl font-bold mb-2">{article.webTitle}</h2>
@@ -176,6 +177,208 @@ const NewNewsAggregator = () => {
                         </a>
                     </div>
                 ))}
+
+
+                <Grid item xs={12}>
+                    <Typography variant="h4" align='center'>
+                        News With Images
+                    </Typography>
+                    <hr />
+                </Grid>
+
+                {/* Example Contents */}
+
+                <Grid
+                    item
+                    container
+                    xs={12}
+                    spacing={4}
+                    alignItems='center'
+                    justifyContent='center'
+                // sx={{ justifyContent: { sm: 'left', xs: 'center', md: 'center' },}}
+                >
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit", }}>
+                            <CardMedia
+                                sx={{ height: 100 }}
+                                image="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg"
+                                title="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit", }}>
+                            <CardMedia
+                                sx={{ height: 100 }}
+                                image="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg"
+                                title="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card
+                            sx={{
+                                width: "inherit",
+                                // maxWidth: 345
+                            }}>
+                            <CardMedia
+                                sx={{ height: 100 }}
+                                image="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg"
+                                title="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card
+                            sx={{
+                                width: "inherit",
+                                // maxWidth: 345
+                            }}>
+                            <CardMedia
+                                sx={{ height: 100 }}
+                                image="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg"
+                                title="green iguana"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                </Grid>
+
+
+                {/***************  SECOND EXAMPLE DATA *****************/}
+
+
+                <Grid item xs={12}>
+                    <Typography variant="h4" align='center'>
+                        News Without Images
+                    </Typography>
+                    <hr />
+                </Grid>
+
+                {/* Example Contents */}
+
+                <Grid
+                    item
+                    container
+                    xs={12}
+                    spacing={4}
+                    alignItems='center'
+                    justifyContent='center'
+                // sx={{ justifyContent: { sm: 'left', xs: 'center', md: 'center' },}}
+                >
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit" }}>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                            <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit" }}>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                            <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit" }}>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                            <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={10} sm={5} md={3.5} lg={2.5}>
+                        <Card sx={{ width: "inherit" }}>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Article Web Title
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Article Section name
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                            <Button component={Link} to={'/login'} size="small" variant="contained">Read More</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                </Grid>
+
+
             </Grid>
         </div>
     )
