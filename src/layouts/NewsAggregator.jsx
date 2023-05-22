@@ -59,11 +59,11 @@ const NewsAggregator = () => {
     
         <div className="container mx-auto p-4 pt-0">          
     
-            <div className="flex flex-col mb-4 sm:flex-wrap sm:flex-row ">
+            <div className="flex flex-col mb-4 sm:space-x-2 sm:flex-row ">
                 <input
                     type="text"
                     className="w-full my-1 sm:w-1/2 sm:mr- md:w-1/3 p-2 rounded border border-gray-300"
-                    placeholder="Search articles by keyword"
+                    placeholder="Search by keyword"
                     value={searchKeyword}
                     onChange={handleSearchInputChange}
                 />
