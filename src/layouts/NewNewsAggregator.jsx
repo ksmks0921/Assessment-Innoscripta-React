@@ -27,7 +27,8 @@ const NewNewsAggregator = () => {
             [name]: value === '' ? null : value,
         }));
     };
-    const fetchNews = async () => {
+    const fetchNews = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.get('/api/newsguaradian', {
                 params: {
