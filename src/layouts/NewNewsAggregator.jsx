@@ -65,6 +65,7 @@ const NewNewsAggregator = () => {
                 >
                     <Paper
                         component="form"
+                        onSubmit={fetchNews}
                         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
                     >
                         <InputBase
@@ -74,7 +75,7 @@ const NewNewsAggregator = () => {
                             value={searchKeyword}
                             onChange={handleSearchInputChange}
                         />
-                        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
                             <SearchIcon />
                         </IconButton>
                     </Paper>
@@ -127,7 +128,9 @@ const NewNewsAggregator = () => {
                                     <em>All Categories</em>
                                 </MenuItem>
                                 <MenuItem value="sports">Sports</MenuItem>
-                                <MenuItem value="politics"> Politics </MenuItem>
+                                <MenuItem value="health"> Health </MenuItem>
+                                <MenuItem value="science"> Science </MenuItem>
+                                <MenuItem value="business"> Business </MenuItem>
                             </Select>
                             <FormHelperText>Select a category</FormHelperText>
                         </FormControl>
@@ -147,7 +150,7 @@ const NewNewsAggregator = () => {
                                 <MenuItem value="">
                                     <em>All Sources</em>
                                 </MenuItem>
-                                <MenuItem value="today">Today</MenuItem>
+                                <MenuItem value="news-api">News</MenuItem>
                                 <MenuItem value="nytimes">The New York Times</MenuItem>
                                 <MenuItem value="guardian">The Guardian</MenuItem>
                             </Select>
