@@ -51,15 +51,17 @@ const NewNewsAggregator = () => {
                 container
                 alignItems='center'
                 justifyContent='center'
-                spacing={4}
+                spacing={2}
                 xs={12}
-                sx={{margin: "0 auto"}}
+                // sx={{marginTop: "20px", marginLeft: "0px"}}
+                sx={{margin: "20px auto"}}
             >
                 <Grid
                     container
                     item
                     alignItems='center'
                     justifyContent='center'
+                    sx={{paddingRight: "16px"}}
                 >
                     <Paper
                         component="form"
@@ -85,6 +87,7 @@ const NewNewsAggregator = () => {
                     alignItems='center'
                     justifyContent='center'
                     xs={12}
+                    sx={{paddingRight: "16px", justifyContent: { xs: 'left', sm: 'center' }}}
                 >
 
                     {/* Date Filter */}

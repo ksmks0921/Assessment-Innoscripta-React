@@ -7,7 +7,7 @@ const Home = (props) => {
     const { user } = useAuthContext(); 
     
     return (
-        <div>
+        <div className="max-w-full mx-auto mt-5">
             <NewNewsAggregator />
         </div>
     );
