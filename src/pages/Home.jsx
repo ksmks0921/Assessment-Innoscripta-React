@@ -1,5 +1,6 @@
 import useAuthContext from "../context/AuthContext";
-import NewsAggregator from "../layouts/NewsAggregator";
+// import NewsAggregator from "../layouts/NewsAggregator";
+import NewNewsAggregator from "../layouts/NewNewsAggregator";
 
 
 const Home = (props) => {
@@ -7,7 +8,7 @@ const Home = (props) => {
     
     return (
         <div className="max-w-7xl mx-auto mt-12">
-            <NewsAggregator />
+            <NewNewsAggregator />
         </div>
     );
 };
