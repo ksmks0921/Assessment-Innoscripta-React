@@ -15,6 +15,8 @@ This guide will help you install and set up a React project using Docker.
    ```bash
    git clone https://github.com/ksmks0921/Assessment-Innoscripta-React
 
+   ```
+
 2. Navigate to the project directory:
 
    ```bash
@@ -22,35 +24,21 @@ This guide will help you install and set up a React project using Docker.
 
    ```
 
-3. Install project dependencies using npm:
+3. Install project dependencies using docker:
 
    ```bash
-   npm install
+   docker build -t react-app .
 
    ```
 
-4. Start the Docker containers:
+4. Run the Docker container:
 
    ```bash
-   docker-compose up -d
+   docker run -d -p 127.0.0.1:5173:5173 react-app
 
    ```
 
-5. Build the React project
-
-   ```bash
-   docker-compose exec app npm run build
-
-   ```
-
-6. Visit http://127.0.0.1:5173 in your browser to access the React application.
-
-   
-## Additional Information
-
-The Docker configuration is defined in the docker-compose.yml file.
-The React application files are located in the app directory.
-The development server can be started using npm run dev.
+5. Visit http://127.0.0.1:5173 in your browser to access the React application.
 
 ## Troubleshooting
 
