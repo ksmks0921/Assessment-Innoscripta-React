@@ -1,21 +1,7 @@
-# Base image
-FROM node:14-alpine
-
-# Set working directory
+FROM node:alpine
 WORKDIR /app
-
-# Install dependencies
-COPY package*.json ./
-RUN npm install
-
-# Copy project files
-COPY . .
-
-# Build the React app
-RUN npm run build
-
-# Expose the container port
-EXPOSE 5173
-
-# Start the React app
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN npm i
 CMD ["npm", "run", "start"]
